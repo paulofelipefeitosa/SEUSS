@@ -41,6 +41,6 @@ RUN rm -rf /tmp/cmake-3.6.2*
 RUN yum install -yq docker iproute
 
 # seuss 
-RUN git clone http://www.github.com/sesa/seuss  /root/seuss
+RUN git clone http://www.github.com/paulofelipefeitosa/seuss  /root/seuss
 WORKDIR /root/seuss
 RUN cmake . && make -j 
