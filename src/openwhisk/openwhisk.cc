@@ -102,7 +102,7 @@ void openwhisk::test() {
           }
 
           if(benchmark_config.empty()){
-            cout << "Empty input... Try again (or 'q' to quit)" << endl;
+            //cout << "Empty input... Try again (or 'q' to quit)" << endl;
             continue;
           }
 

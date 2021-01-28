@@ -13,7 +13,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/local/lib64:/usr/lib64
 
 # build dependencies 
 WORKDIR /tmp
-RUN git clone --recursive https://www.github.com/sesa/seuss  /tmp/seuss
+RUN git clone --recursive https://www.github.com/paulofelipefeitosa/seuss  /tmp/seuss
 
 WORKDIR /tmp/seuss/ext/librdkafka
 RUN cmake . && make -j && make install && make clean
