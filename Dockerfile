@@ -1,4 +1,4 @@
-FROM ebbrt/hosted:centos7
+FROM pfelipefeitosa/ebbrt-hosted
 ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/local/lib64:/usr/lib64
 WORKDIR /tmp
 
