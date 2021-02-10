@@ -90,8 +90,7 @@ void openwhisk::test() {
                      "(default: 0 1 1 0)."
                   << std::endl;
         do {
-          //std::cout << "<rounds, users, threads, sleep(ms)> ('q' to "
-                       "quit): ";
+          //std::cout << "<rounds, users, threads, sleep(ms)> ('q' to "quit): ";
 
           string benchmark_config;
           getline(cin, benchmark_config);
