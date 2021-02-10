@@ -44,3 +44,5 @@ RUN yum install -yq docker iproute
 RUN git clone http://www.github.com/paulofelipefeitosa/seuss  /root/seuss
 WORKDIR /root/seuss
 RUN cmake . && make -j 
+COPY seuss.elf seuss.elf
+COPY seuss.elf32 seuss.elf32
