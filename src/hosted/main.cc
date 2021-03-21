@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
       std::cerr << "Unable to open file: " <<  function_path << std::endl;
       std::exit(1);
     }
-    infile.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
+    infile.imbue(std::locale(std::locale(), new std::codecvt_utf8<wchar_t>));
     std::wstringstream file_buffer;
     file_buffer << infile.rdbuf();
     openwhisk::function = file_buffer.str();
