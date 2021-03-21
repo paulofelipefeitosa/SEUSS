@@ -43,8 +43,7 @@ public:
   void Ping(ebbrt::Messenger::NetworkId nid);
 
   // TODO: Combine SendRequest and SendReply
-  void SendRequest(ebbrt::Messenger::NetworkId nid, InvocationStats istats,
-                   std::string code, std::string args);
+  void SendRequest(ebbrt::Messenger::NetworkId nid, InvocationStats istats, std::string args, std::string code);
 
   void SendReply(ebbrt::Messenger::NetworkId nid, InvocationStats istats,
                    std::string args);
