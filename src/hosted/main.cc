@@ -79,13 +79,13 @@ int main(int argc, char **argv) {
     std::cout << "Target function: " << function_path  << std::endl;
 
     // read in file to string
-    std::wifstream infile(function_path);
+    std::ifstream infile(function_path);
     if(!infile.good()){
       std::cerr << "Unable to open file: " <<  function_path << std::endl;
       std::exit(1);
     }
-    infile.imbue(std::locale(std::locale(), new std::codecvt_utf8<char>));
-    std::wstringstream file_buffer;
+    //infile.imbue(std::locale(std::locale(), new std::codecvt_utf8<char>));
+    std::stringstream file_buffer;
     file_buffer << infile.rdbuf();
     openwhisk::function = file_buffer.str();
     std::cout << "--------------------------------------------" << std::endl
