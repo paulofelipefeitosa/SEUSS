@@ -6,6 +6,8 @@
 #include <csignal>
 #include <iostream>
 #include <fstream> // std::ifstream
+#include <sstream>
+#include <codecvt>
 #include <stdlib.h> // exit
 #include <thread> 
 #include <chrono>  
@@ -77,12 +79,13 @@ int main(int argc, char **argv) {
     std::cout << "Target function: " << function_path  << std::endl;
 
     // read in file to string
-    std::ifstream infile(function_path);
+    std::wifstream infile(function_path);
     if(!infile.good()){
       std::cerr << "Unable to open file: " <<  function_path << std::endl;
       std::exit(1);
     }
-    std::stringstream file_buffer;
+    infile.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
+    std::wstringstream file_buffer;
     file_buffer << infile.rdbuf();
     openwhisk::function = file_buffer.str();
     std::cout << "--------------------------------------------" << std::endl
