@@ -64,15 +64,15 @@ seuss::Controller::ScheduleActivation(
   stats.args_size = args.size();
   std::copy(am.activationId_.begin(), am.activationId_.begin()+33, stats.activation_id);
 
-  //std::cout << "CONTROLLER: scheduling activation on core #"
-  //          << (size_t)ebbrt::Cpu::GetMine() 
-           // << ": " << am.to_json()
-           // << std::endl
-           // << "``` CODE:" << std::endl
-           // << code << std::endl
-           // << "``` ARGS:" << std::endl
-           // << args << std::endl << "```" 
-           //<< std::endl;
+  std::cout << "CONTROLLER: scheduling activation on core #"
+            << (size_t)ebbrt::Cpu::GetMine()
+            << ": " << am.to_json()
+            << std::endl
+            << "``` CODE:" << std::endl
+            << code << std::endl
+            << "``` ARGS:" << std::endl
+            << args << std::endl << "```"
+           << std::endl;
 
   /* Capture a record of this Activation */
   ebbrt::Promise<openwhisk::msg::CompletionMessage> promise;
